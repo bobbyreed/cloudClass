@@ -1,5 +1,13 @@
 *{
     margin: 0;
     background-color: purple;
+    color: aliceblue;
 }
 
+ol{
+    background-color: black;
+}
+.sub-item{
+    color: aqua;
+
+}
