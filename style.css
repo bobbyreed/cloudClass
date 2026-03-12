@@ -4,6 +4,10 @@
     color: aliceblue;
 }
 
+body{
+    padding: 5px;
+}
+
 ol{
     background-color: black;
 }
@@ -15,4 +19,14 @@ ol{
 .nav{
     background-color: black;
     color: aliceblue;
+}
+
+h1{
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+}
+
+subtitle{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
 }
