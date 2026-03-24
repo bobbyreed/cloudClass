@@ -1,1 +1,1 @@
-alert("Welcome to the Thunderdome");
+console.log("Script is loaded");
