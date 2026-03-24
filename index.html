@@ -15,33 +15,21 @@
         <a href="./pages/netlifyJournal.html"><button>Netlify Journal</button></a>
         <a href="./pages/standing-up.html"><button>Standing-Up</button></a>
     </div>
-    <ul>
-        <li class="item">Item 1</li>
-        <ol>
-            <li class="sub-item">What</li>
-            <li class="sub-item">was</li>
-            <li class="sub-item">I</li>
-            <li class="sub-item">thinking?</li>
-            <li class="sub-item"></li>
-            <li class="sub-item">This</li>
-            <li class="sub-item">is</li>
-            <li class="sub-item">way</li>
-            <li class="sub-item">too</li>
-            <li class="sub-item">many</li>
-            <li class="sub-item">list</li>
-            <li class="sub-item">items</li>
-            <li class="sub-item">and</li>
-            <li class="sub-item">now</li>
-            <li class="sub-item">I</li>
-            <li class="sub-item">have</li>
-            <li class="sub-item">to</li>
-            <li class="sub-item">fill</li>
-            <li class="sub-item">them</li>
-            <li class="sub-item">all</li>
-        </ol>
-        <li class="item">Item 2</li>
-        <li class="item">Item 3</li>
-    </ul>
     <script src="./script.js"></script>
+    <ul class="visitor-list"></ul>
+    <script>
+        // Call the netlify function to get the visitor count and update the page
+        fetch('/.netlify/functions/get-visitors')
+            .then(response => response.json()) //parse JSON response
+            .then(visitors => {
+                const list = document.getElementById('visitor-list');
+                visitors.forEach(v => {
+                    const item = document.createElement('li');
+                    item.textContent = v.name + ' - ' + v.visited_at;
+                    list.appendChild(item);
+                });
+            })
+            .catch(error => console.error('Function called failed: ', error));
+    </script>
 </body>
 </html>
